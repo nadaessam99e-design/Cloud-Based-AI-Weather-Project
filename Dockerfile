@@ -20,7 +20,7 @@ COPY . .
 RUN mkdir -p /root/.streamlit
 COPY streamlit_config.toml /root/.streamlit/config.toml
 
-EXPOSE 8501
+EXPOSE 8502
 
 HEALTHCHECK --interval=30s --timeout=10s --retries=3 \
     CMD curl -f http://localhost:8501/_stcore/health || exit 1
