@@ -1,1 +1,7 @@
-
+#libraries in this project
+streamlit>=1.32.0
+requests>=2.31.0
+python-dotenv>=1.0.0
+fpdf2>=2.7.9
+PyPDF2>=3.0.1
+anthropic>=0.25.0
