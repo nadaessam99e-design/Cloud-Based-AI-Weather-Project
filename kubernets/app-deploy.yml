@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ai-deploy
+  name: ai-deploy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ai-deploy
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: ai-deploy
+    spec:
+      containers:
+      - image: nadaessam99e/weather-pdf-app:9ae89c0672c68cce3a323ec389f7e2790d8af14c
+        name: weather-pdf-app
+        envFrom:
+        - secretRef:
+            name: my-secret
+        ports:
+        - containerPort: 8501
